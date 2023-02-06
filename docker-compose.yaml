@@ -1,0 +1,7 @@
+version: '3'
+services:
+
+  seg-frame3:
+    build: .
+    ports:
+      - 8080:8080
