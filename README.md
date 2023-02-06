@@ -1,6 +1,6 @@
 ## <div align="center">Pictuer Swap</div>
 
-This app will run Yolov8 Image Segmentation model, trained on a custom dataset, to segment pictures hanging on a wall. Once the frame on the wall is detected another picture can be selected to swap with the original picture. 
+This app will run inference on a [Yolov8 Image Segmentation](https://github.com/ultralytics/ultralytics) model, trained on a custom dataset, to segment pictures hanging on a wall. Once the frame on the wall is detected another picture can be selected to swap with the original picture. 
 
 After running an inference:
 `results = model.predict(input_image, imgsz=640, conf=conf, save=False, device='cpu')`
