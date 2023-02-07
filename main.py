@@ -86,7 +86,7 @@ with gr.Blocks(css="footer {visibility: hidden}") as demo:
             pic_img = gr.Image("tiny_rosie.JPG")
         sub_btn.click(gradio_infer, inputs=[main_img, pic_img], outputs=main_img)
         clr_btn.click(cleanup, inputs=None, outputs=main_img)
-    gr.Examples(examples= ["360_F_372101672_3rUmP4pLre8dDgot1VUnI72dFp2EknYd.jpg"],
+    gr.Examples(examples= ["testimg.jpg"],
                         inputs=main_img, fn=gradio_infer)
 
 gr.mount_gradio_app(app, demo, path="/gradio")
