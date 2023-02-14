@@ -28,7 +28,7 @@ def mask_to_image(img, mask):
     plt.show()
     
 def detect_corners(canvas, img):
-    # find four corners of the door
+    # find four corners of the objec
     contours, hierarchy = cv2.findContours(img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     cnt = sorted(contours, key=cv2.contourArea, reverse=True)[-1]
     cv2.drawContours(canvas, cnt, -1, (255, 255, 0), 2)
@@ -51,14 +51,14 @@ def detect_corners(canvas, img):
 
 
 def skew_img(img, bg_img, corners):
-    # skew door image to fit in the bigger image
+    # skew overlay to fit in the bigger image
     rows, cols, ch = img.shape 
     pts1 = np.float32(
         [[0,      0],
         [cols,    0],
         [cols, rows],
         [0,    rows]])    
-    # adjust corners to start from (min_x,min_y) in doorimg
+    # adjust corners to start from (min_x,min_y) 
     minvar = np.argmin(corners, axis=0) # [min_x, min_y]
     min_x = corners[minvar[0]][0]
     min_y = corners[minvar[1]][1]
